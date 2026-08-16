@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MelodyHub - Playlists</title>
+
+    <link rel="stylesheet" href="musicplayer.css">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            🎵 MelodyHub
+        </div>
+
+        <nav class="main-nav">
+
+            <a href="favorites.html">
+                ❤️ Favorites
+            </a>
+
+            <a href="playlists.html">
+                📋 Playlists
+            </a>
+
+            <a href="index.html">
+                🎵 All Songs
+            </a>
+
+        </nav>
+
+        <button id="logout-btn">
+            Logout
+        </button>
+
+    </header>
+
+
+    <main>
+
+        <section>
+
+            <div class="section-title">
+
+                <h2>📋 My Playlists</h2>
+
+                <button id="create-playlist-btn">
+                    + Create Playlist
+                </button>
+
+            </div>
+
+
+            <div id="playlists-container"
+                 class="playlists-container">
+            </div>
+
+        </section>
+
+
+        <!-- Selected playlist -->
+
+        <section id="selected-playlist-section"
+                 style="display: none;">
+
+            <h2 id="selected-playlist-title">
+                Playlist
+            </h2>
+
+            <div id="playlist-songs"
+                 class="library">
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="playlists.js"></script>
+
+</body>
+
+</html>

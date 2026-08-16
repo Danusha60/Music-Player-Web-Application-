@@ -1,39 +1,167 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>MelodyHub - Your Music Space</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
- <link rel="stylesheet" href="musicplayer.css">
+    <title>MelodyHub - Your Music Space</title>
 
+    <link rel="stylesheet" href="musicplayer.css">
 </head>
+
 <body>
 
-  <div class="navbar">
-    <div class="logo">🎵 MelodyHub</div>
-    <div class="lang-buttons">
-      <button onclick="filterSongs('All')">All</button>
-      <button onclick="filterSongs('English')">English</button>
-      <button onclick="filterSongs('Telugu')">Telugu</button>
-      <button onclick="filterSongs('Hindi')">Hindi</button>
-    </div>
-  </div>
+    <!-- ================= HEADER ================= -->
 
-  <div id="library" class="library"></div>
+    <header>
 
-  <div class="player">
-    <img id="cover" src="" alt="Cover" />
-    <h2 id="song-title"></h2>
-    <h2 id="artist"></h2>
-    <audio id="audio" controls></audio>
-    <div>
-      <button id="prev">&#x23EE Prev</button>
-      <button id="play-pause">&#x23F8 Play</button>
-      <button id="next">&#x23ED Next</button>
-    </div>
-  </div>
+        <div class="logo">
+            🎵 MelodyHub
+        </div>
 
-  <script src="musicplayer.js"></script>
 
+        <nav class="main-nav">
+
+            <a href="favorites.html">
+                ❤️ Favorites
+            </a>
+
+            <a href="playlists.html">
+                📋 Playlists
+            </a>
+
+            <a href="index.html">
+                🎵 All Songs
+            </a>
+
+        </nav>
+
+
+        <div class="header-right">
+
+            <!-- Language filters -->
+
+            <button onclick="filterSongs('All')">
+                All
+            </button>
+
+            <button onclick="filterSongs('English')">
+                English
+            </button>
+
+            <button onclick="filterSongs('Telugu')">
+                Telugu
+            </button>
+
+            <button onclick="filterSongs('Hindi')">
+                Hindi
+            </button>
+
+
+            <!-- ONLY ONE LOGOUT BUTTON -->
+
+            <button id="logout-btn">
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+        <!-- SONG LIBRARY -->
+
+        <section class="songs-section">
+
+            <h2>
+                🎵 All Songs
+            </h2>
+
+            <div id="library" class="library">
+                <!-- Songs will be loaded from MongoDB -->
+            </div>
+
+        </section>
+
+
+        <!-- ================= MUSIC PLAYER ================= -->
+
+        <aside class="player">
+
+            <img
+                id="cover"
+                src=""
+                alt="Cover"
+            >
+
+
+            <h2 id="song-title">
+                Song Title
+            </h2>
+
+
+            <p id="artist">
+                Artist
+            </p>
+
+
+            <audio
+                id="audio"
+                controls>
+            </audio>
+
+
+            <div class="player-controls">
+
+                <button id="prev">
+                    ⏮ Prev
+                </button>
+
+                <button id="play-pause">
+                    ▶️ Play
+                </button>
+
+                <button id="next">
+                    ⏭ Next
+                </button>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="musicplayer.js"></script>
+
+
+    <!-- ================= LOGOUT ================= -->
+
+    <script>
+
+        const logoutBtn =
+            document.getElementById("logout-btn");
+
+
+        logoutBtn.onclick = () => {
+
+            localStorage.removeItem("token");
+
+            localStorage.removeItem("user");
+
+            window.location.href = "auth.html";
+
+        };
+
+    </script>
 
 </body>
+
 </html>
