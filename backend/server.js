@@ -12,8 +12,9 @@ const app = express();
 // ===============================
 // MIDDLEWARE
 // ===============================
-
-app.use(cors());
+app.use(cors({
+    origin: "https://danusha60.github.io"
+}));
 app.use(express.json());
 
 
