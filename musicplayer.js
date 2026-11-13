@@ -101,7 +101,7 @@ async function loadSongs() {
 
         const response =
             await fetch(
-                "http://localhost:5000/api/songs"
+                "https://music-player-web-application-j8xs.onrender.com/api/songs"
             );
 
 
@@ -190,7 +190,7 @@ function loadSong(idx) {
     } else {
 
         coverEl.src =
-            `http://localhost:5000/images/${encodeURIComponent(s.cover)}`;
+            `https://music-player-web-application-j8xs.onrender.com/images/${encodeURIComponent(s.cover)}`;
 
     }
 
@@ -207,7 +207,7 @@ function loadSong(idx) {
     } else {
 
         audio.src =
-            `http://localhost:5000/music/${encodeURIComponent(s.src)}`;
+            `https://music-player-web-application-j8xs.onrender.com/music/${encodeURIComponent(s.src)}`;
 
     }
 
@@ -247,7 +247,7 @@ function displayLibrary(arr) {
         const coverUrl =
             s.cover.startsWith("http")
                 ? s.cover
-                : `http://localhost:5000/images/${encodeURIComponent(s.cover)}`;
+                : `https://music-player-web-application-j8xs.onrender.com/images/${encodeURIComponent(s.cover)}`;
 
 
         // ====================================
@@ -556,12 +556,13 @@ async function addFavorite(
         const response =
             await fetch(
 
-                `http://localhost:5000/api/favorites/${songId}`,
+                `https://music-player-web-application-j8xs.onrender.com/api/favorites/${songId}`,
 
                 {
                     method: "POST",
 
                     headers: {
+
 
                         "Authorization":
                             `Bearer ${token}`
@@ -656,7 +657,7 @@ async function showPlaylistsForSong(
         const response =
             await fetch(
 
-                "http://localhost:5000/api/playlists",
+                "https://music-player-web-application-j8xs.onrender.com/api/playlists",
 
                 {
                     headers: {
@@ -748,7 +749,7 @@ async function showPlaylistsForSong(
         const addResponse =
             await fetch(
 
-                `http://localhost:5000/api/playlists/${selectedPlaylist._id}/songs/${song._id}`,
+                `https://music-player-web-application-j8xs.onrender.com/api/playlists/${selectedPlaylist._id}/songs/${song._id}`,
 
                 {
                     method: "POST",

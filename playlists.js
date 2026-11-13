@@ -33,7 +33,7 @@ async function loadPlaylists() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/playlists",
+            "https://music-player-web-application-j8xs.onrender.com/api/playlists",
             {
                 headers: {
                     "Authorization":

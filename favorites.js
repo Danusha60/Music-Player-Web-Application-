@@ -26,7 +26,7 @@ async function loadFavorites() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/favorites",
+            "https://music-player-web-application-j8xs.onrender.com/api/favorites",
             {
                 method: "GET",
 
